@@ -19,7 +19,7 @@ class State:
     for i in range(self.N):
       for j in range(self.N):
         if self.sudoku[i,j] == 0:
-
+          for num in range(1,self.N+1):
             if self.is_valid_action(i,j,num):
               valid_actions.append(Action(i,j,num))
     return valid_actions
@@ -71,7 +71,7 @@ def dfs(initial_state):
 
 sudoku= np.array([[0,9,0,8,6,5,2,0,0],
 		            	[0,0,5,0,1,2,0,6,8],
-			            [0,0,0,0,0,0,0,4,0],
+			            [8,6,2,3,9,7,1,4,5],
 			            [9,2,1,7,4,8,3,5,6],
 		            	[6,7,8,5,3,1,4,2,9],
 			            [4,5,3,9,2,6,8,7,1],
